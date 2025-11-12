@@ -68,7 +68,13 @@ def main():
 
     # ✅ Context summary (lowercase target col)
     corr_summary = build_summary(df, feature_cols, target_col="close")
-    narrative = narrative_from_summary(corr_summary)
+    macro_df = df[['brent_close','usd_inr']].dropna()
+    feature_df = df[feature_cols]
+    prediction_info = {'mean': mean_pred, 'lower': lower, 'upper': upper}
+
+    narrative = narrative_from_summary(
+        corr_summary, macro_df=macro_df, feature_df=feature_df, prediction=prediction_info
+    )
 
     # ✅ Print final executive-style report
     print(f"📈 Predicted Price: ₹{mean_pred:,.2f}")
