@@ -1,0 +1,63 @@
+# config/default.yaml
+# Default configuration for Deepak Nitrite multivariate LSTM pipeline.
+
+data:
+  raw_dir: data/raw
+  inter_dir: data/intermediates
+  processed_dir: data/processed
+  start_date: "2000-01-01"
+  end_date: "latest"
+
+features:
+  technical_indicators:
+    - ind_rsi_14
+    - ind_ma10
+    - ind_ma50
+    - ind_ma200
+    - ind_ema20
+    - ind_bb_h
+    - ind_bb_l
+    - ind_mom_10
+    - ind_macd
+    - ind_macd_sig
+  macro:
+    - brent_close
+    - usd_inr
+    - cpi
+    - repo_rate
+  text:
+    - news_compound
+    - corporate_events_compound
+  additional:
+    - log_return
+    - pct_change
+
+model:
+  seq_len: 60
+  pred_horizon: 1
+  input_dropout: 0.0
+  hidden_dim: 128
+  num_layers: 2
+  dropout: 0.2
+  bidirectional: false
+  use_attention: true
+
+training:
+  epochs: 30
+  batch_size: 64
+  lr: 0.001
+  early_stop_patience: 5
+  seed: 42
+
+experiment:
+  save_dir: models
+  shap_sample: 200
+  mc_dropout_runs: 50
+
+reporting:
+  correlation_window_days: 90
+  top_k_correlations: 8
+  narrative_length: long
+
+logging:
+  config_path: config/logging.yaml

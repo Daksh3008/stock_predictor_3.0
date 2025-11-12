@@ -1,0 +1,11 @@
+📊 **Feature Correlation Insights**
+------------------------------------------------------------
+• ind_ma10: Positive correlation (High, 1.00 overall, last 90d 0.92)
+• ind_ema20: Positive correlation (High, 1.00 overall, last 90d 0.90)
+• ind_bb_h: Positive correlation (High, 1.00 overall, last 90d 0.78)
+• ind_bb_l: Positive correlation (High, 1.00 overall, last 90d 0.77)
+• ind_ma50: Positive correlation (High, 0.99 overall, last 90d 0.80)
+
+🧠 **Interpretation:**
+→ Most features show a positive correlation, indicating broad supportive conditions.
+→ Average correlation is moderately positive (0.47). Technicals align with macro tailwinds.

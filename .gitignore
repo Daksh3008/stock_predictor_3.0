@@ -1,0 +1,25 @@
+# Ignore Python virtual environments
+venv/
+.env/
+
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore model weights and large data files
+models/*.pt
+models/*.npy
+models/*.joblib
+data/raw/
+data/interim/
+
+# Ignore logs and temporary files
+*.log
+.DS_Store
+
+# VSCode or IDE configs
+.vscode/
+.idea/
+
